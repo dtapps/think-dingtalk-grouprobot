@@ -32,7 +32,7 @@
 
 declare(strict_types=1);
 
-namespace chaimdingtalk\grouprobot;
+namespace liguangchun\dingtalk\grouprobot;
 
 
 class DingBot

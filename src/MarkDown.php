@@ -30,7 +30,7 @@
  * Twitter: @GC19980202
  */
 
-namespace chaimdingtalk\grouprobot;
+namespace liguangchun\dingtalk\grouprobot;
 
 
 /**
