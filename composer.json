@@ -1,21 +1,22 @@
 {
-    "name": "chaim/dingtalk-grouprobot",
-    "description": "dingding grouprobot plugin",
-	"type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "李光春",
-            "email": "gc@dtapp.net"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-        "php": ">=7.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "chaimdingtalk\\grouprobot\\": "src"
-        }
+  "name": "liguangchun/dingtalk-grouprobot",
+  "description": "dingding grouprobot plugin",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "liguangchun",
+      "email": "gc@dtapp.net"
     }
+  ],
+  "homepage": "https://www.dtapp.net",
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "liguangchun\\dingtalk\\grouprobot\\": "src"
+    }
+  }
 }
