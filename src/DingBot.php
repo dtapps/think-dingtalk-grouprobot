@@ -92,6 +92,7 @@ class DingBot
     /**
      * 设置配置
      * @param array $config 配置信息数组
+     * @return $this
      */
     public function setConfig(array $config = [])
     {
@@ -186,7 +187,7 @@ class DingBot
      * markdown消息
      * @param string $title 标题
      * @param string $content 内容
-     * @return [type]          [description]
+     * @return array
      */
     public function markdown(string $title, string $content)
     {
@@ -209,7 +210,7 @@ class DingBot
      * @param string $singleTitle 跳转按钮标题
      * @param int|integer $btnOrientation 按钮排列 0:竖排,1:横排
      * @param int|integer $hideAvatar 头像显示 0:隐藏,1:显示
-     * @return [type]                      [description]
+     * @return array
      */
     public function singleActionCard(string $title, string $content, string $url, string $picUrl = '', string $singleTitle = '阅读全文', int $btnOrientation = 0, int $hideAvatar = 1)
     {
@@ -234,7 +235,7 @@ class DingBot
      * 组装按钮btn
      * @param string $title 按钮标题
      * @param string $url 跳转链接
-     * @return [type]        [description]
+     * @return $this
      */
     public function makeBtn(string $title, string $url)
     {
