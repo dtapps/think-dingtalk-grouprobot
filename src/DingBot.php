@@ -42,31 +42,30 @@ class DingBot
      * @var string
      */
     protected $webhook = '';
+
     /**
      * 消息类型
      * @var string
      */
     protected $msgType = 'text';
+
     /**
      * @信息
      * @var array
      */
     protected $at = [];
+
     /**
      * 链接数组
      * @var array
      */
     protected $links = [];
+
     /**
      * 按钮数组
      * @var array
      */
     protected $btns = [];
-    /**
-     * 错误消息
-     * @var string
-     */
-    protected $error = '';
 
     function __construct(array $config = [])
     {
@@ -96,9 +95,7 @@ class DingBot
      */
     public function setConfig(array $config = [])
     {
-        if (!empty($config['webhook'])) {
-            $this->webhook = $config['webhook'];
-        }
+        if (!empty($config['webhook'])) $this->webhook = $config['webhook'];
         return $this;
     }
 
@@ -106,16 +103,14 @@ class DingBot
      * 发送给手机号
      * @param string,array  $mobiles 接收人手机号
      * 接收三种类型传参:
-     * 1:139xxxxx163
-     * 2:139xxxxx161,139xxxxx162,139xxxxx163
-     * 3:[139xxxxx161,139xxxxx162,139xxxxx163]
+     * 1:13800138000
+     * 2:13800138000,13800138000,13800138000
+     * 3:[13800138000,13800138000,13800138000]
      * @return $this
      */
     public function at($mobiles)
     {
-        if (empty($mobiles)) {
-            return $this;
-        }
+        if (empty($mobiles)) return $this;
         if (is_string($mobiles)) {
             if (strpos($mobiles, ',')) {
                 $mobiles = explode(',', $mobiles);
@@ -148,7 +143,7 @@ class DingBot
     /**
      * 发送文本消息
      * @param string $content 消息内容
-     * @return array    发送结果
+     * @return bool    发送结果
      */
     public function text(string $content = '')
     {
@@ -167,7 +162,7 @@ class DingBot
      * @param string $content 内容文本
      * @param string $linkUrl 跳转链接url
      * @param string $picUrl 附图url
-     * @return array    发送结果
+     * @return bool    发送结果
      */
     public function link(string $title, string $content, string $linkUrl, string $picUrl = '')
     {
@@ -187,7 +182,7 @@ class DingBot
      * markdown消息
      * @param string $title 标题
      * @param string $content 内容
-     * @return array
+     * @return bool
      */
     public function markdown(string $title, string $content)
     {
@@ -210,14 +205,12 @@ class DingBot
      * @param string $singleTitle 跳转按钮标题
      * @param int|integer $btnOrientation 按钮排列 0:竖排,1:横排
      * @param int|integer $hideAvatar 头像显示 0:隐藏,1:显示
-     * @return array
+     * @return bool
      */
     public function singleActionCard(string $title, string $content, string $url, string $picUrl = '', string $singleTitle = '阅读全文', int $btnOrientation = 0, int $hideAvatar = 1)
     {
         $this->msgType = 'actionCard';
-        if (!empty($picUrl)) {
-            $content = "![screenshot]({$picUrl})" . $content;
-        }
+        if (!empty($picUrl)) $content = "![screenshot]({$picUrl})" . $content;
         $data = [
             'actionCard' => [
                 'title' => $title,
@@ -253,14 +246,12 @@ class DingBot
      * @param array $btns 按钮数组
      * @param int|integer $btnOrientation 按钮排列 0:竖排,1:横排
      * @param int|boolean $hideAvatar 头像显示 0:隐藏,1:显示
-     * @return [type]                      [description]
+     * @return bool
      */
     public function multiActionCard(string $title, string $content, array $btns = [], int $btnOrientation = 1, int $hideAvatar = 0)
     {
         $this->msgType = 'actionCard';
-        if (empty($btns)) {
-            $btns = $this->btns;
-        }
+        if (empty($btns)) $btns = $this->btns;
         $data = [
             'actionCard' => [
                 'title' => $title,
@@ -293,13 +284,12 @@ class DingBot
     /**
      * feedCard类型消息
      * @param array $links 链接消息数组
-     * @return [type]        [description]
+     * @return bool
+     * @throws \Exception
      */
     public function feedCard(array $links = [])
     {
-        if (empty($links)) {
-            $links = $this->links;
-        }
+        if (empty($links)) $links = $this->links;
         if (empty($links)) {
             throw new \Exception('links empty');
         }
@@ -315,16 +305,12 @@ class DingBot
     /**
      * 组装发送消息
      * @param array $data 消息内容数组
-     * @return array       发送结果
+     * @return bool 发送结果
      */
     public function sendMsg(array $data)
     {
-        if (empty($data['msgtype'])) {
-            $data['msgtype'] = $this->msgType;
-        }
-        if (empty($data['at'])) {
-            $data['at'] = $this->at;
-        }
+        if (empty($data['msgtype'])) $data['msgtype'] = $this->msgType;
+        if (empty($data['at'])) $data['at'] = $this->at;
         $this->init();
         $res = $this->request($data);
         $result = json_decode($res, true);
@@ -336,18 +322,9 @@ class DingBot
     }
 
     /**
-     * 获取错误信息
-     * @return string 错误信息
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
      * 发送数据
      * @param array $postData 发送消息数据数组
-     * @return [type]           [description]
+     * @return bool|string
      */
     protected function request(array $postData)
     {
