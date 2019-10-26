@@ -1,4 +1,5 @@
-钉钉机器人扩展
+# dingtalk-grouprobot
+thinkphp 钉钉机器人扩展
 
 ## 安装
 ```

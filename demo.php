@@ -19,17 +19,23 @@
 ======`-.____`-.___\_____/___.-`____.-'======
                    `=---='
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-         佛祖保佑       永无BUG
 */
+
 /**
  * Created by : PhpStorm
- * Date: 2019/8/27
- * Time: 23:07
+ * Date: 2019/10/26
+ * Time: 22:56
  * User: 李光春
- * Twitter: @GC19980202
  */
 
-return [
-    //自定义机器人api接口链接
-    'webhook' => 'https://oapi.dingtalk.com/robot/send?access_token=xxx',
-];
+require_once './vendor/autoload.php';
+
+// 实例化
+$ding = new \liguangchun\dingtalk\grouprobot\DingBot();
+// 配置通知地址
+$ding->setConfig([
+    'webhook' => 'https://oapi.dingtalk.com/robot/send?access_token=xxx'
+]);
+// 发送文本消息
+$res = $ding->text('测试测试');
+var_dump($res);
