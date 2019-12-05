@@ -11,7 +11,7 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "李光春",
+      "name": "Chaim",
       "email": "gc@dtapp.net",
       "homepage": "https://api.dtapp.net"
     }
@@ -22,7 +22,7 @@
   },
   "autoload": {
     "psr-4": {
-      "liguangchun\\dingtalk\\notice\\": "src"
+      "liguangchun\\DingTalk\\Notice\\": "src"
     }
   }
 }

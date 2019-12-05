@@ -4,7 +4,7 @@
  * (c) Chaim <gc@dtapp.net>
  */
 
-namespace liguangchun\dingtalk\notice;
+namespace liguangchun\DingTalk\Notice;
 
 /**
  * 钉钉
