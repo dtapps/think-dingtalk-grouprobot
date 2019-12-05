@@ -4,7 +4,7 @@
  * (c) Chaim <gc@dtapp.net>
  */
 
-$ding = new \liguangchun\dingtalk\notice\dingDing([
+$ding = new \liguangchun\DingTalk\Notice\dingDing([
     'webhook' => '通知地址'
 ]);
 $ding->text('测试');
