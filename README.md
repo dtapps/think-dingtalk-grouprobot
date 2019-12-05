@@ -1,27 +1,25 @@
 # dingtalk-grouprobot
-thinkphp 钉钉机器人扩展
+钉钉群通知
 
 ## 安装
 ```
 composer require liguangchun/dingtalk-grouprobot
 ```
 
-## 使用
+## 更新
 ```
-use liguangchun\dingtalk\grouprobot\DingBot;
+composer update liguangchun/dingtalk-grouprobot
+```
 
-class Index
-{
-    public function index()
-    {
-        // 实例化
-        $ding = new DingBot();
-        // 配置通知地址
-        $ding->setConfig([
-            'webhook' => 'https://oapi.dingtalk.com/robot/send?access_token=xxx'
-        ]);
-        // 发送文本消息
-        $res = $ding->text('测试测试');
-    }
-}
+## 删除
 ```
+composer remove liguangchun/dingtalk-grouprobot
+```
+
+## 搜索
+```
+composer search liguangchun/dingtalk-grouprobot
+```
+
+## 使用
+查看 tests文件夹的notice文件

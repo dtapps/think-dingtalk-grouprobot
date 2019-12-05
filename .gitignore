@@ -1,3 +1,6 @@
 .idea
-vendor/
+.git
+.gitignore
+.vscode
+/vendor/
 composer.lock
