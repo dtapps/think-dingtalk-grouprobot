@@ -22,4 +22,4 @@ composer search liguangchun/dingtalk-grouprobot
 ```
 
 ## 使用
-查看 tests文件夹的notice文件
+参考tests文件夹的help文件
