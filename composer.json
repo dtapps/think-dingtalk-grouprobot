@@ -1,0 +1,49 @@
+{
+  "name": "liguangchun/dingtalk-grouprobot",
+  "description": "钉钉群通知",
+  "keywords": [
+    "dtapp",
+    "liguangchun",
+    "think-library",
+    "thinkLibrary",
+    "dingTalk",
+    "GroupRobot",
+    "dingDing"
+  ],
+  "time": "2019-08-27",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Chaim",
+      "email": "gc@dtapp.net",
+      "homepage": "https://api.dtapp.net"
+    }
+  ],
+  "homepage": "https://www.dtapp.net",
+  "require": {
+    "php": ">=7.1",
+    "liguangchun/think-library": "6.0.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "DtApp\\Notice\\DingTalk\\": "src"
+    }
+  },
+  "extra": {
+    "think": {
+      "services": [
+        "DtApp\\Notice\\DingTalk"
+      ],
+      "config": {
+        "dtapp_notice": "src/dtapp_notice.php"
+      }
+    }
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://mirrors.aliyun.com/composer/"
+    }
+  }
+}
