@@ -20,10 +20,9 @@
 
 ## 安装
 
-部分代码来自互联网，若有异议可以联系作者进行删除。
-
 - 国外仓库地址：[https://github.com/GC0202/dingtalk-grouprobot](https://github.com/GC0202/dingtalk-grouprobot)
 - 国内仓库地址：[https://gitee.com/liguangchun/dingtalk-grouprobot](https://gitee.com/liguangchun/dingtalk-grouprobot)
+- Packagist 地址：[https://packagist.org/packages/liguangchun/dingtalk-grouprobo](https://packagist.org/packages/liguangchun/dingtalk-grouprobo)
 
 ### 开发版
 ```text
