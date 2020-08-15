@@ -90,7 +90,7 @@ class GroupRobot extends Service
      */
     public function text(string $content)
     {
-        return $this->sendMsg([
+        return $this->send([
             'text' => [
                 'content' => $content,
             ],
@@ -103,7 +103,7 @@ class GroupRobot extends Service
      * @return bool 发送结果
      * @throws Exception
      */
-    private function sendMsg(array $data)
+    private function send(array $data)
     {
         if (empty($this->_webHook) && empty($this->_accessToken)) {
             throw new Exception('钉钉自定义机器人接口未配置');

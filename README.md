@@ -1,4 +1,4 @@
-<img align="right" width="100" src="https://cdn-oss.dtapp.net/04/999e9f2f06d396968eacc10ce9bc8a.png" alt="dtApp Logo"/>
+<img align="right" width="100" src="https://kodo-cdn.dtapp.net/04/999e9f2f06d396968eacc10ce9bc8a.png" alt="www.dtapp.net"/>
 
 <h1 align="left"><a href="https://www.dtapp.net/">ThinkPHP6钉钉群通知</a></h1>
 
