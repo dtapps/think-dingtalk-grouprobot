@@ -38,7 +38,6 @@ class GroupRobot extends Service
      */
     private $msgType = 'text';
 
-
     /**
      * 链接
      * @var string
