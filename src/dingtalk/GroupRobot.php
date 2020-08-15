@@ -23,7 +23,7 @@ use DtApp\ThinkLibrary\service\curl\HttpService;
 /**
  * 定义当前版本
  */
-const VERSION = '1.0.4';
+const VERSION = '1.0.5';
 
 /**
  * 钉钉机器人扩展
@@ -36,18 +36,8 @@ class GroupRobot extends Service
      * 消息类型
      * @var string
      */
-    private $_msgType = 'text';
+    private $msgType = 'text';
 
-    /**
-     * 消息类型
-     * @param string $type
-     * @return $this
-     */
-    public function msgType($type = 'text')
-    {
-        $this->_msgType = $type;
-        return $this;
-    }
 
     /**
      * 链接
@@ -84,12 +74,14 @@ class GroupRobot extends Service
     }
 
     /**
-     * @param string $content
+     * 发送文本消息
+     * @param string $content 消息内容
      * @return bool
      * @throws Exception
      */
     public function text(string $content)
     {
+        $this->msgType = 'text';
         return $this->send([
             'text' => [
                 'content' => $content,
@@ -108,21 +100,17 @@ class GroupRobot extends Service
         if (empty($this->_webHook) && empty($this->_accessToken)) {
             throw new Exception('钉钉自定义机器人接口未配置');
         }
+        if (empty($data['msgtype'])) {
+            $data['msgtype'] = $this->msgType;
+        }
         if (!empty($this->_webHook)) {
-            if (empty($data['msgtype'])) {
-                $data['msgtype'] = $this->_msgType;
-            }
             return HttpService::instance()
                 ->url($this->_webHook . $this->_accessToken)
                 ->data($data)
                 ->post()
                 ->toArray();
         }
-
         if (!empty($this->_accessToken)) {
-            if (empty($data['msgtype'])) {
-                $data['msgtype'] = $this->_msgType;
-            }
             return HttpService::instance()
                 ->url("https://oapi.dingtalk.com/robot/send?access_token=" . $this->_accessToken)
                 ->data($data)
