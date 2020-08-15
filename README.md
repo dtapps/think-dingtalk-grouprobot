@@ -49,10 +49,10 @@ composer remove liguangchun/dingtalk-grouprobot -vvv
 ## 服务使用示例
 
 ```php
-use DtApp\Notice\DingTalk\dingtalk\GroupRobot;
+use DtApp\Notice\DingTalk\dingtalk\GroupRobotService;
 
 try {
-    var_dump(GroupRobot::instance()
+    var_dump(GroupRobotService::instance()
         ->accessToken('xxx')
         ->text('测试'));
 } catch (\DtApp\Notice\DingTalk\exception\Exception $e) {

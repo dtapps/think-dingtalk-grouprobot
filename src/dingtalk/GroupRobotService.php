@@ -27,10 +27,10 @@ const VERSION = '1.0.5';
 
 /**
  * 钉钉机器人扩展
- * Class GroupRobot
+ * Class GroupRobotService
  * @package DtApp\Notice\DingTalk\dingtalk
  */
-class GroupRobot extends Service
+class GroupRobotService extends Service
 {
     /**
      * 消息类型
