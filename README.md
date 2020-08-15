@@ -22,9 +22,8 @@
 
 部分代码来自互联网，若有异议可以联系作者进行删除。
 
-- Github仓库地址：https://github.com/GC0202/dingtalk-grouprobot
-- 码云仓库地址：https://gitee.com/liguangchun/dingtalk-grouprobot
-- 华为云仓库地址：https://codehub-cn-south-1.devcloud.huaweicloud.com/composer00001/dingtalk-grouprobot.git
+- 国外仓库地址：[https://github.com/GC0202/dingtalk-grouprobot](https://github.com/GC0202/dingtalk-grouprobot)
+- 国内仓库地址：[https://gitee.com/liguangchun/dingtalk-grouprobot](https://gitee.com/liguangchun/dingtalk-grouprobot)
 
 ### 开发版
 ```text
