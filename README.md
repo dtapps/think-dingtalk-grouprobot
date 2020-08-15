@@ -18,7 +18,7 @@
 
 1. PHP7.1 版本及以上
 
-## 安装
+## 托管
 
 - 国外仓库地址：[https://github.com/GC0202/dingtalk-grouprobot](https://github.com/GC0202/dingtalk-grouprobot)
 - 国内仓库地址：[https://gitee.com/liguangchun/dingtalk-grouprobot](https://gitee.com/liguangchun/dingtalk-grouprobot)
