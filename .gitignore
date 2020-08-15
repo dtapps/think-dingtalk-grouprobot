@@ -1,7 +1,0 @@
-.idea
-.git
-.gitignore
-.vscode
-git.sh
-/vendor/
-composer.lock
