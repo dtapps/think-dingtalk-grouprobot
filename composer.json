@@ -3,7 +3,7 @@
   "description": "ThinkPHP6钉钉群通知",
   "keywords": [
     "dtapps",
-    "think-dingtalk-grouprobot",
+    "think-dingtalk-grouprobot"
   ],
   "time": "2019-08-27",
   "type": "library",
