@@ -23,12 +23,7 @@
 - 国内仓库地址：[https://gitee.com/dtapps/think-dingtalk-grouprobot](https://gitee.com/dtapps/think-dingtalk-grouprobot)
 - Packagist 地址：[https://packagist.org/packages/dtapps/think-dingtalk-grouprobot](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot)
 
-### 开发版
-```text
-composer require dtapps/think-dingtalk-grouprobot dev-master -vvv
-```
-
-### 稳定版
+### 安装
 ```text
 composer require dtapps/think-dingtalk-grouprobot -vvv
 ```
