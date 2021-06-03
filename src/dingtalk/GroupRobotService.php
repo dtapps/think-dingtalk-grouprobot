@@ -10,15 +10,14 @@
 // | 开源协议 ( https://mit-license.org )
 // +----------------------------------------------------------------------
 // | 国内仓库地址 ：https://gitee.com/liguangchun/dingtalk-grouprobo
-// | 国外仓库地址 ：https://github.com/GC0202/dingtalk-grouprobo
+// | 国外仓库地址 ：https://github.com/dtapps/think-dingtalk-grouprobot
 // | Packagist 地址 ：https://packagist.org/packages/liguangchun/dingtalk-grouprobo
 // +----------------------------------------------------------------------
 
-namespace DtApp\Notice\DingTalk\dingtalk;
+namespace dtapps\dingtalk\grouprobot\dingtalk;
 
-use DtApp\Notice\DingTalk\exception\Exception;
-use DtApp\ThinkLibrary\Service;
-use DtApp\ThinkLibrary\service\curl\HttpService;
+use dtapps\dingtalk\grouprobot\exception\Exception;
+use dtapps\dingtalk\grouprobot\Service;
 
 /**
  * 定义当前版本
@@ -28,7 +27,7 @@ const VERSION = '1.0.6';
 /**
  * 钉钉机器人扩展
  * Class GroupRobotService
- * @package DtApp\Notice\DingTalk\dingtalk
+ * @package dtapps\dingtalk\grouprobot\dingtalk
  */
 class GroupRobotService extends Service
 {
@@ -42,14 +41,22 @@ class GroupRobotService extends Service
      * 链接
      * @var string
      */
+
     private $_webHook = '';
+
+    /**
+     * 请求
+     * @var
+     */
+    private $_url, $data;
+    private $headers = 'application/json;charset=utf-8';
 
     /**
      * 链接
      * @param string $webHook
      * @return $this
      */
-    public function webHook($webHook = '')
+    public function webHook(string $webHook = '')
     {
         $this->_webHook = $webHook;
         return $this;
@@ -66,7 +73,7 @@ class GroupRobotService extends Service
      * @param string $accessToken
      * @return $this
      */
-    public function accessToken($accessToken = '')
+    public function accessToken(string $accessToken = '')
     {
         $this->_accessToken = $accessToken;
         return $this;
@@ -78,7 +85,7 @@ class GroupRobotService extends Service
      * @return bool
      * @throws Exception
      */
-    public function text(string $content)
+    public function text(string $content): bool
     {
         $this->msgType = 'text';
         return $this->send([
@@ -94,7 +101,7 @@ class GroupRobotService extends Service
      * @return bool 发送结果
      * @throws Exception
      */
-    private function send(array $data)
+    private function send(array $data): bool
     {
         if (empty($this->_webHook) && empty($this->_accessToken)) {
             throw new Exception('钉钉自定义机器人接口未配置');
@@ -103,20 +110,49 @@ class GroupRobotService extends Service
             $data['msgtype'] = $this->msgType;
         }
         if (!empty($this->_webHook)) {
-            return HttpService::instance()
-                ->url($this->_webHook . $this->_accessToken)
-                ->data($data)
-                ->post()
-                ->toArray();
+            if (is_array($data)) {
+                $this->data = json_encode($data, JSON_UNESCAPED_UNICODE);
+            } else {
+                $this->data = $data;
+            }
         }
         if (!empty($this->_accessToken)) {
-            return HttpService::instance()
-                ->url("https://oapi.dingtalk.com/robot/send?access_token=" . $this->_accessToken)
-                ->data($data)
-                ->post()
-                ->toArray();
+            if (is_array($data)) {
+                $this->data = json_encode($data, JSON_UNESCAPED_UNICODE);
+            } else {
+                $this->data = $data;
+            }
         }
 
         throw new Exception('钉钉自定义机器人接口未配置，【webhook，access_token】请配置其中一个');
+    }
+
+    /**
+     * 发送Post请求
+     * @return array|bool|mixed|string
+     */
+    private function http()
+    {
+        if (!empty($this->_webHook)) {
+            $this->_url = $this->_webHook . $this->_accessToken;
+        } else {
+            $this->_url = "https://oapi.dingtalk.com/robot/send?access_token={$this->_accessToken}";
+        }
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $this->_url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: ' . $this->headers));
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // 跳过证书检查
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);  // 从证书中检查SSL加密算法是否存在
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $this->data);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        curl_setopt($ch, CURLOPT_AUTOREFERER, true);
+        $content = curl_exec($ch);
+        curl_close($ch);
+        $this->output = $content;
+        return $this;
     }
 }

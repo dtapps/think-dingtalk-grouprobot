@@ -1,0 +1,10 @@
+.env
+.git
+.svn
+.idea
+.vscode
+.DS_Store
+/vendor
+composer.lock
+composer.phar
+git.sh

@@ -14,17 +14,51 @@
 // | Packagist 地址 ：https://packagist.org/packages/liguangchun/dingtalk-grouprobo
 // +----------------------------------------------------------------------
 
-namespace dtapps\dingtalk\grouprobot\exception;
+namespace dtapps\dingtalk\grouprobot;
+
+use think\App;
+use think\Container;
 
 /**
- * 错误处理
- * Class Exception
- * @package dtapps\dingtalk\grouprobot\exception
+ * 自定义服务基类
+ * Class Service
+ * @package dtapps\dingtalk\grouprobot
  */
-class Exception extends \think\Exception
+abstract class Service
 {
-    public function errorMessage(): string
+
+    /**
+     * 应用实例
+     * @var App
+     */
+    protected $app;
+
+    /**
+     * Service constructor.
+     * @param App $app
+     */
+    public function __construct(App $app)
     {
-        return $this->getMessage();
+        $this->app = $app;
+    }
+
+    /**
+     * 初始化服务
+     * @return Service
+     */
+    protected function initialize(): Service
+    {
+        return $this;
+    }
+
+    /**
+     * 静态实例对象
+     * @param array $args
+     * @return static
+     */
+    public static function instance(...$args): Service
+    {
+        return Container::getInstance()
+            ->make(static::class, $args);
     }
 }
