@@ -4,15 +4,14 @@
 
 📦 ThinkPHP6钉钉群通知
 
-[![Latest Stable Version](https://poser.pugx.org/liguangchun/dingtalk-grouprobot/v/stable)](https://packagist.org/packages/liguangchun/dingtalk-grouprobot) 
-[![Latest Unstable Version](https://poser.pugx.org/liguangchun/dingtalk-grouprobot/v/unstable)](https://packagist.org/packages/liguangchun/dingtalk-grouprobot) 
-[![Total Downloads](https://poser.pugx.org/liguangchun/dingtalk-grouprobot/downloads)](https://packagist.org/packages/liguangchun/dingtalk-grouprobot) 
-[![License](https://poser.pugx.org/liguangchun/dingtalk-grouprobot/license)](https://packagist.org/packages/liguangchun/dingtalk-grouprobot)
+[![Latest Stable Version](https://poser.pugx.org/dtapps/think-dingtalk-grouprobot/v/stable)](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot) 
+[![Latest Unstable Version](https://poser.pugx.org/dtapps/think-dingtalk-grouprobot/v/unstable)](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot) 
+[![Total Downloads](https://poser.pugx.org/dtapps/think-dingtalk-grouprobot/downloads)](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot) 
+[![License](https://poser.pugx.org/dtapps/think-dingtalk-grouprobot/license)](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot)
 [![PHP Version](https://img.shields.io/badge/php-%3E%3D7.1-8892BF.svg)](http://www.php.net/)
-[![Code Health](https://hn.devcloud.huaweicloud.com/codecheck/v1/codecheck/task/codehealth.svg?taskId=76a095890e894f4099c2e3f005d827e3)](https://hn.devcloud.huaweicloud.com/codecheck/project/c7ff3e2d65674858bd363cb43ee6c35e/codecheck/task/76a095890e894f4099c2e3f005d827e3/detail)
-[![Build Status](https://travis-ci.org/GC0202/dingtalk-grouprobot.svg?branch=6.0)](https://travis-ci.org/GC0202/dingtalk-grouprobot)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/GC0202/dingtalk-grouprobot/badges/quality-score.png?b=6.0)](https://scrutinizer-ci.com/g/GC0202/dingtalk-grouprobot/?branch=6.0)
-[![Code Coverage](https://scrutinizer-ci.com/g/GC0202/dingtalk-grouprobot/badges/coverage.png?b=6.0)](https://scrutinizer-ci.com/g/GC0202/dingtalk-grouprobot/?branch=6.0)
+[![Build Status](https://travis-ci.org/dtapps/think-dingtalk-grouprobot.svg?branch=6.0)](https://travis-ci.org/dtapps/think-dingtalk-grouprobot)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/badges/quality-score.png?b=6.0)](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/?branch=6.0)
+[![Code Coverage](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/badges/coverage.png?b=6.0)](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/?branch=6.0)
 
 ## 依赖环境
 
@@ -20,42 +19,42 @@
 
 ## 托管
 
-- 国外仓库地址：[https://github.com/GC0202/dingtalk-grouprobot](https://github.com/GC0202/dingtalk-grouprobot)
-- 国内仓库地址：[https://gitee.com/liguangchun/dingtalk-grouprobot](https://gitee.com/liguangchun/dingtalk-grouprobot)
-- Packagist 地址：[https://packagist.org/packages/liguangchun/dingtalk-grouprobo](https://packagist.org/packages/liguangchun/dingtalk-grouprobo)
+- 国外仓库地址：[https://github.com/dtapps/think-dingtalk-grouprobot](https://github.com/dtapps/think-dingtalk-grouprobot)
+- 国内仓库地址：[https://gitee.com/dtapps/think-dingtalk-grouprobot](https://gitee.com/dtapps/think-dingtalk-grouprobot)
+- Packagist 地址：[https://packagist.org/packages/dtapps/think-dingtalk-grouprobot](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot)
 
 ### 开发版
 ```text
-composer require liguangchun/dingtalk-grouprobot dev-master -vvv
+composer require dtapps/think-dingtalk-grouprobot dev-master -vvv
 ```
 
 ### 稳定版
 ```text
-composer require liguangchun/dingtalk-grouprobot -vvv
+composer require dtapps/think-dingtalk-grouprobot -vvv
 ```
 
 ## 更新
 
 ```text
-composer update liguangchun/dingtalk-grouprobot -vvv
+composer update dtapps/think-dingtalk-grouprobot -vvv
 ```
 
 ## 删除
 
 ```text
-composer remove liguangchun/dingtalk-grouprobot -vvv
+composer remove dtapps/think-dingtalk-grouprobot -vvv
 ```
 
 ## 服务使用示例
 
 ```php
-use DtApp\Notice\DingTalk\dingtalk\GroupRobotService;
+use dtapps\dingtalk\grouprobot\dingtalk\GroupRobotService;
 
 try {
     var_dump(GroupRobotService::instance()
         ->accessToken('xxx')
         ->text('测试'));
-} catch (\DtApp\Notice\DingTalk\exception\Exception $e) {
+} catch (\dtapps\dingtalk\grouprobot\exception\Exception $e) {
     var_dump($e->getMessage());
 }
 ```
