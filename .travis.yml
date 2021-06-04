@@ -3,7 +3,7 @@ language: php
 
 # 指定版本，可以指定多个
 php:
-  - 7.1.x
+  - 7.1
 
 # 运行的脚本命令
 script:
