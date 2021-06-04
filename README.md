@@ -4,14 +4,13 @@
 
 📦 ThinkPHP6钉钉群通知
 
-[![Latest Stable Version](https://poser.pugx.org/dtapps/think-dingtalk-grouprobot/v/stable)](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot) 
-[![Latest Unstable Version](https://poser.pugx.org/dtapps/think-dingtalk-grouprobot/v/unstable)](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot) 
+[![Latest Stable Version](https://poser.pugx.org/dtapps/think-dingtalk-grouprobot/v/stable)](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot)  
 [![Total Downloads](https://poser.pugx.org/dtapps/think-dingtalk-grouprobot/downloads)](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot) 
 [![License](https://poser.pugx.org/dtapps/think-dingtalk-grouprobot/license)](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot)
 [![PHP Version](https://img.shields.io/badge/php-%3E%3D7.1-8892BF.svg)](http://www.php.net/)
-[![Build Status](https://travis-ci.org/dtapps/think-dingtalk-grouprobot.svg?branch=6.0)](https://travis-ci.org/dtapps/think-dingtalk-grouprobot)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/badges/quality-score.png?b=6.0)](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/?branch=6.0)
-[![Code Coverage](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/badges/coverage.png?b=6.0)](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/?branch=6.0)
+[![Build Status](https://travis-ci.org/dtapps/think-dingtalk-grouprobot.svg?branch=master)](https://travis-ci.org/dtapps/think-dingtalk-grouprobot)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/?branch=master)
 
 ## 依赖环境
 
