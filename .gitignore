@@ -5,7 +5,7 @@
 .vscode
 .DS_Store
 /vendor
-composer.lock
 composer.phar
+composer_2.phar
 git.sh
 gitv.sh
