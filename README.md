@@ -52,6 +52,9 @@
 ![php](https://badgen.net/packagist/php/dtapps/think-dingtalk-grouprobot)
 ![License (custom server) badge](https://badgen.net/packagist/l/dtapps/think-dingtalk-grouprobot?server=https%3A%2F%2Fpackagist.org)
 
+[comment]: <> (badge.fury.io)
+[![PHP version](https://badge.fury.io/ph/dtapps%2Fthink-dingtalk-grouprobot.svg)](https://badge.fury.io/ph/dtapps%2Fthink-dingtalk-grouprobot)
+
 [comment]: <> (github.com)
 ![Release](https://img.shields.io/github/release/dtapps/think-dingtalk-grouprobot.svg?style=flat-square)
 
