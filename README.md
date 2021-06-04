@@ -11,6 +11,8 @@
 [![Build Status](https://api.travis-ci.com/dtapps/think-dingtalk-grouprobot.svg?branch=master)](https://www.travis-ci.com/github/dtapps/think-dingtalk-grouprobot)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/?branch=master)
+[![Code Build](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/badges/build.png?b=master)](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/?branch=master)
+[![Code Intelligence](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/g/dtapps/think-dingtalk-grouprobot/?branch=master)
 
 ## 依赖环境
 

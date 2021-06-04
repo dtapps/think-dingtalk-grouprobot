@@ -9,9 +9,9 @@
 // +----------------------------------------------------------------------
 // | 开源协议 ( https://mit-license.org )
 // +----------------------------------------------------------------------
-// | 国内仓库地址 ：https://gitee.com/liguangchun/dingtalk-grouprobo
+// | 国内仓库地址 ：https://gitee.com/dtapps/think-dingtalk-grouprobot
 // | 国外仓库地址 ：https://github.com/dtapps/think-dingtalk-grouprobot
-// | Packagist 地址 ：https://packagist.org/packages/liguangchun/dingtalk-grouprobo
+// | Packagist 地址 ：https://packagist.org/packages/dtapps/think-dingtalk-grouprobot
 // +----------------------------------------------------------------------
 
 namespace dtapps\dingtalk\grouprobot\exception;
