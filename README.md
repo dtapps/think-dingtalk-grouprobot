@@ -5,7 +5,7 @@
 📦 ThinkPHP6钉钉群通知
 
 [![Latest Stable Version](https://poser.pugx.org/dtapps/think-dingtalk-grouprobot/v/stable)](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot)  
-[![Total Downloads](https://poser.pugx.org/dtapps/think-dingtalk-grouprobot/downloads)](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot) 
+[![Total Downloads](https://poser.pugx.org/dtapps/think-dingtalk-grouprobot/downloads)](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot)
 [![License](https://poser.pugx.org/dtapps/think-dingtalk-grouprobot/license)](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot)
 [![PHP Version](https://img.shields.io/badge/php-%3E%3D7.1-8892BF.svg)](http://www.php.net/)
 [![Build Status](https://api.travis-ci.com/dtapps/think-dingtalk-grouprobot.svg?branch=master)](https://www.travis-ci.com/github/dtapps/think-dingtalk-grouprobot)
@@ -22,9 +22,10 @@
 
 - 国外仓库地址：[https://github.com/dtapps/think-dingtalk-grouprobot](https://github.com/dtapps/think-dingtalk-grouprobot)
 - 国内仓库地址：[https://gitee.com/dtapps/think-dingtalk-grouprobot](https://gitee.com/dtapps/think-dingtalk-grouprobot)
-- Packagist 地址：[https://packagist.org/packages/dtapps/think-dingtalk-grouprobot](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot)
+- Packagist地址：[https://packagist.org/packages/dtapps/think-dingtalk-grouprobot](https://packagist.org/packages/dtapps/think-dingtalk-grouprobot)
 
 ### 安装
+
 ```text
 composer require dtapps/think-dingtalk-grouprobot -vvv
 ```
@@ -46,11 +47,7 @@ composer remove dtapps/think-dingtalk-grouprobot -vvv
 ```php
 use dtapps\dingtalk\grouprobot\dingtalk\GroupRobotService;
 
-try {
-    var_dump(GroupRobotService::instance()
-        ->accessToken('xxx')
-        ->text('测试'));
-} catch (\dtapps\dingtalk\grouprobot\exception\Exception $e) {
-    var_dump($e->getMessage());
-}
+        GroupRobotService::instance()
+            ->accessToken("xxx")
+            ->text("Test");
 ```

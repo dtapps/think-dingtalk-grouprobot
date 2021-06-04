@@ -7,10 +7,7 @@ php:
 
 # 运行的脚本命令
 script:
-  - phpunit --coverage-text --coverage-clover=coverage.clover
+  - vendor/bin/phpunit --coverage-clover coverage.xml
 
 after_script:
-  - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
-  - export CODECOV_TOKEN="b55dc5c1-6060-40d8-9b73-b7845e1f07f4"
   - bash <(curl -s https://codecov.io/bash)
