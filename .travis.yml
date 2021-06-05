@@ -4,5 +4,5 @@ php:
   - 7.1
 
 script:
-  - composer install
   - composer update -vvv --profile --prefer-dist --optimize-autoloader
+  - ls -lh
